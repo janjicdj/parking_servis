@@ -13,7 +13,7 @@ class AddColumnGorivoToAutomobilTable extends Migration
      */
     public function up()
     {
-        Schema::table('automobil', function (Blueprint $table) {
+        Schema::table('automobils', function (Blueprint $table) {
             $table->string('gorivo');
         });
     }
@@ -25,7 +25,7 @@ class AddColumnGorivoToAutomobilTable extends Migration
      */
     public function down()
     {
-        Schema::table('automobil', function (Blueprint $table) {
+        Schema::table('automobils', function (Blueprint $table) {
             //
         });
     }

@@ -18,6 +18,7 @@ class AutomobilFactory extends Factory
             'marka'=>$this->faker->randomElement(['Audi','BMW','Mercedes','Ford']),
             'model'=>$this->faker->randomElement(['A1','A4','3','5','10C']),
             'godiste'=>$this->faker->year('now'),
+            'gorivo'=>$this->faker->randomElement(['benzin','dizel','elektro pogon']),
             'karoserija'=>$this->faker->randomElement(['limuzina','karavan','hecbek']),
             'boja'=>$this->faker->colorName()
 

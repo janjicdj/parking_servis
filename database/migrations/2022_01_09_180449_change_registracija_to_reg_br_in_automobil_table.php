@@ -13,7 +13,7 @@ class ChangeRegistracijaToRegBrInAutomobilTable extends Migration
      */
     public function up()
     {
-        Schema::table('automobil', function (Blueprint $table) {
+        Schema::table('automobils', function (Blueprint $table) {
             $table->renameColumn('registracija','reg_br');
         });
     }
@@ -25,7 +25,7 @@ class ChangeRegistracijaToRegBrInAutomobilTable extends Migration
      */
     public function down()
     {
-        Schema::table('automobil', function (Blueprint $table) {
+        Schema::table('automobils', function (Blueprint $table) {
             $table->renameColumn('reg_br','registracija');
         });
     }

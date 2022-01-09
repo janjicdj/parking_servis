@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Zaposleni extends Model
 {
     use HasFactory;
+
+    protected $guarded=[''];
+
+    public function parking(){
+        return $this->belongsTo(Parking::class);
+    }
 }

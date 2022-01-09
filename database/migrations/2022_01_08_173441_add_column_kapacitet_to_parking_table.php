@@ -13,7 +13,7 @@ class AddColumnKapacitetToParkingTable extends Migration
      */
     public function up()
     {
-        Schema::table('parking', function (Blueprint $table) {
+        Schema::table('parkings', function (Blueprint $table) {
             $table->integer('kapacitet');
         });
     }
@@ -25,7 +25,7 @@ class AddColumnKapacitetToParkingTable extends Migration
      */
     public function down()
     {
-        Schema::table('parking', function (Blueprint $table) {
+        Schema::table('parkings', function (Blueprint $table) {
             //
         });
     }

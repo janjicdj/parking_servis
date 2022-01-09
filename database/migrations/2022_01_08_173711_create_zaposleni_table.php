@@ -13,7 +13,7 @@ class CreateZaposleniTable extends Migration
      */
     public function up()
     {
-        Schema::create('zaposleni', function (Blueprint $table) {
+        Schema::create('zaposlenis', function (Blueprint $table) {
             $table->id();
             $table->string('ime');
             $table->string('prezime');
@@ -21,7 +21,7 @@ class CreateZaposleniTable extends Migration
             $table->string('pol');
             $table->string('username')->unique();
             $table->string('password');
-            $table->foreignId('parking_id')->constrained('parking')->cascadeOnUpdate()->restrictOnDelete();
+            $table->foreignId('parking_id');
             $table->rememberToken();
             $table->timestamps();
         });
@@ -34,6 +34,6 @@ class CreateZaposleniTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('zaposleni');
+        Schema::dropIfExists('zaposlenis');
     }
 }

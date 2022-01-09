@@ -21,7 +21,7 @@ class ParkingTerminFactory extends Factory
             'parking'=>Parking::factory(),
             'automobil'=>Automobil::factory(),
             'ulazak'=>$vreme,
-            'izlazak'=>$vreme+10
+            'izlazak'=>null
         ];
     }
 }

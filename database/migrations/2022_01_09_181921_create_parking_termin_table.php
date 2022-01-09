@@ -13,10 +13,10 @@ class CreateParkingTerminTable extends Migration
      */
     public function up()
     {
-        Schema::create('parking_termin', function (Blueprint $table) {
+        Schema::create('parking_termins', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('parking')->constrained('parking')->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignId('automobil')->constrained('automobil')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('automobil');
+            $table->foreignId('parking');
             $table->dateTime('ulazak');
             $table->dateTime('izlazak')->nullable();
             $table->timestamps();

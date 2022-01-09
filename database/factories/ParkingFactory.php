@@ -18,7 +18,8 @@ class ParkingFactory extends Factory
             'adresa'=>$this->faker->address(),
             'grad'=>$this->faker->city(),
             'brojTelefona'=>$this->faker->phoneNumber(),
-            'email'=>$this->faker->unique()->email()
+            'email'=>$this->faker->unique()->email(),
+            'kapacitet'=>$this->faker->randomElement([20,30,50])
         ];
     }
 }

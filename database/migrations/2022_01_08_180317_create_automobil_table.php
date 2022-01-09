@@ -13,7 +13,7 @@ class CreateAutomobilTable extends Migration
      */
     public function up()
     {
-        Schema::create('automobil', function (Blueprint $table) {
+        Schema::create('automobils', function (Blueprint $table) {
             $table->id();
             $table->string('registracija')->unique();
             $table->string('marka');
@@ -32,6 +32,6 @@ class CreateAutomobilTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('automobil');
+        Schema::dropIfExists('automobils');
     }
 }
