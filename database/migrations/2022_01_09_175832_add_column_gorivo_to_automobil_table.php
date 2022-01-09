@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnKapacitetToParkingTable extends Migration
+class AddColumnGorivoToAutomobilTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddColumnKapacitetToParkingTable extends Migration
      */
     public function up()
     {
-        Schema::table('parking', function (Blueprint $table) {
-            $table->integer('kapacitet');
+        Schema::table('automobil', function (Blueprint $table) {
+            $table->string('gorivo');
         });
     }
 
@@ -25,7 +25,7 @@ class AddColumnKapacitetToParkingTable extends Migration
      */
     public function down()
     {
-        Schema::table('parking', function (Blueprint $table) {
+        Schema::table('automobil', function (Blueprint $table) {
             //
         });
     }

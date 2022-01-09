@@ -21,6 +21,7 @@ class CreateZaposleniTable extends Migration
             $table->string('pol');
             $table->string('username')->unique();
             $table->string('password');
+            $table->foreignId('parking_id')->constrained('parking')->cascadeOnUpdate()->restrictOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });

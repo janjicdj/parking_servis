@@ -15,6 +15,12 @@ class CreateAutomobilTable extends Migration
     {
         Schema::create('automobil', function (Blueprint $table) {
             $table->id();
+            $table->string('registracija')->unique();
+            $table->string('marka');
+            $table->string('model');
+            $table->string('godiste');
+            $table->string('karoserija');
+            $table->string('boja');
             $table->timestamps();
         });
     }
