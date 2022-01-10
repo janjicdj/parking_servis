@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\AutomobilController;
+use App\Http\Controllers\ParkingController;
+use App\Http\Controllers\ParkingTerminController;
+use App\Http\Controllers\KorisnikController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::resource('automobili',AutomobilController::class);
+Route::resource('parking',ParkingController::class);
+Route::resource('korisnik',KorisnikController::class);
+Route::resource('parkingTermin',ParkingTerminController::class);
+
+Route::post('/register',[AuthController::class,'register']);
+

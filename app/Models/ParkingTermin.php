@@ -11,12 +11,13 @@ class ParkingTermin extends Model
 
     protected $guarded = [''];
 
+    public function parking(){
+        return $this->belongsTo(Parking::class);
+    }
+
     public function automobil(){
         return $this->belongsTo(Automobil::class);
     }
 
-    public function parking(){
-        return $this->belongsTo(Parking::class);
-    }
 
 }

@@ -12,12 +12,12 @@ class Parking extends Model
 
     protected $guarded = [''];
 
-    public function termini(){
+    public function termin(){
        $this->hasMany(ParkingTermin::class);
     }
 
     public function zaposleni(){
-        $this->hasMany(Zaposleni::class);
+        $this->hasMany(Korisnik::class);
     }
 
 }

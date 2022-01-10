@@ -6,7 +6,7 @@ use App\Models\Parking;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class ZaposleniFactory extends Factory
+class KorisnikFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,7 +17,7 @@ class ZaposleniFactory extends Factory
     {
         return [
           'ime'=>$this->faker->name,
-           'prezime'=>$this->faker->lastName(),
+            'prezime'=>$this->faker->lastName(),
         'datumrodjenja'=>$this->faker->date(),
         'pol'=>$this->faker->randomElement(['Muski','Zenski']),
         'username'=>$this->faker->unique()->userName(),

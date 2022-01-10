@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\AutomobilCollection;
-use App\Http\Resources\AutomobilResource;
-use App\Models\Automobil;
+use App\Http\Resources\KorisnikCollection;
+use App\Http\Resources\KorisnikResource;
+use App\Models\Korisnik;
 use Illuminate\Http\Request;
 
-class AutomobilController extends Controller
+class KorisnikController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class AutomobilController extends Controller
      */
     public function index()
     {
-       $automobili=Automobil::all();
-       return new AutomobilCollection($automobili);
+        $korisnici = Korisnik::all();
+        return new KorisnikCollection($korisnici);
     }
 
     /**
@@ -44,21 +44,21 @@ class AutomobilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Automobil  $automobili
+     * @param  \App\Models\Korisnik  $korisnik
      * @return \Illuminate\Http\Response
      */
-    public function show(Automobil $automobili)
+    public function show(Korisnik $korisnik)
     {
-        return new AutomobilResource($automobili);
+        return new KorisnikResource($korisnik);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Automobil  $automobil
+     * @param  \App\Models\Korisnik  $korisnik
      * @return \Illuminate\Http\Response
      */
-    public function edit(Automobil $automobil)
+    public function edit(Korisnik $korisnik)
     {
         //
     }
@@ -67,10 +67,10 @@ class AutomobilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Automobil  $automobil
+     * @param  \App\Models\Korisnik  $korisnik
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Automobil $automobil)
+    public function update(Request $request, Korisnik $korisnik)
     {
         //
     }
@@ -78,10 +78,10 @@ class AutomobilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Automobil  $automobil
+     * @param  \App\Models\Korisnik  $korisnik
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Automobil $automobil)
+    public function destroy(Korisnik $korisnik)
     {
         //
     }

@@ -18,8 +18,8 @@ class ParkingTerminFactory extends Factory
         $vreme=$this->faker->dateTime('now');
 
         return [
-            'parking'=>Parking::factory(),
-            'automobil'=>Automobil::factory(),
+            'parking_id'=>Parking::factory(),
+            'automobil_id'=>Automobil::factory(),
             'ulazak'=>$vreme,
             'izlazak'=>null
         ];

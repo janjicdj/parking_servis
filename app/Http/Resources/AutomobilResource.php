@@ -16,7 +16,6 @@ class AutomobilResource extends JsonResource
 
     public function toArray($request)
     {
-       // return parent::toArray($request);
         return [
             'id'=>$this->resource->id,
             'reg_br'=>$this->resource->reg_br,

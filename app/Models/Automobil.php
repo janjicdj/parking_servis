@@ -11,7 +11,7 @@ class Automobil extends Model
 
     protected $guarded = [''];
 
-    public function termini(){
+    public function automobil(){
         return $this->hasMany(ParkingTermin::class);
     }
 }

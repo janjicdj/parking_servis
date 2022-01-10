@@ -15,8 +15,8 @@ class CreateParkingTerminTable extends Migration
     {
         Schema::create('parking_termins', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('automobil');
-            $table->foreignId('parking');
+            $table->foreignId('automobil_id');
+            $table->foreignId('parking_id');
             $table->dateTime('ulazak');
             $table->dateTime('izlazak')->nullable();
             $table->timestamps();
