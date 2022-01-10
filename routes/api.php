@@ -25,10 +25,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/profile', function(Request $request) {
         return auth()->user();
     });
-    Route::resource('parkingTermin', ParkingTerminController::class)->only(['show','update','store','destroy']);
+    Route::resource('parkingTermin', ParkingTerminController::class)->only(['update','store','destroy']);
     Route::resource('automobili',AutomobilController::class)->only(['update','store','destroy']);
     Route::resource('parking',ParkingController::class)->only(['update','store','destroy']);
-    Route::resource('zaposleni',ZaposleniController::class)->only(['show','update','store','destroy']);
+    Route::resource('zaposleni',ZaposleniController::class)->only(['index','show','update','store','destroy']);
 
     Route::post('/logout', [AuthController::class, 'logout']);
 });
