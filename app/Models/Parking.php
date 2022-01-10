@@ -17,7 +17,7 @@ class Parking extends Model
     }
 
     public function zaposleni(){
-        $this->hasMany(Korisnik::class);
+        $this->hasMany(Zaposleni::class);
     }
 
 }

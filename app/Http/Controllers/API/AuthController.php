@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Korisnik;
+use App\Models\Zaposleni;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +27,7 @@ class AuthController extends Controller
             return response()->json($validator->errors());
         }
 
-        $korisnik = Korisnik::create([
+        $korisnik = Zaposleni::create([
             'ime'=>$request->ime,
             'prezime'=>$request->prezime,
             'datumrodjenja'=>$request->datumrodjenja,
@@ -42,7 +42,18 @@ class AuthController extends Controller
         return response()->json(['data'=>$korisnik,'access_token'=>$token,'token_type'=>'Bearer']);
     }
 
-    public function login(){
+    public function login(Request $request){
+
+        if(!Auth::attempt($request->only('username','password'))){
+            return response()->json(['message'=>'Unauthorized'],401);
+        }
+
+        $zaposleni = Zaposleni::where('username',$request['username'])->firstOrFail();
+
+        $token = $zaposleni->createToken('auth_token')->plainTextToken;
+
+        return response()->json(['message'=>'Uspesno ste se ulogovali'.$zaposleni->ime." ".$zaposleni->prezime,
+                                  'access_token'=>$token,'token_type'=>'Bearer']);
 
     }
 }

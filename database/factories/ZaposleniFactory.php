@@ -6,7 +6,7 @@ use App\Models\Parking;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
-class KorisnikFactory extends Factory
+class ZaposleniFactory extends Factory
 {
     /**
      * Define the model's default state.

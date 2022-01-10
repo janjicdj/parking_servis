@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Automobil;
 use App\Models\Parking;
 use App\Models\ParkingTermin;
-use App\Models\Korisnik;
+use App\Models\Zaposleni;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,18 +18,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Automobil::truncate();
-        Korisnik::truncate();
+        Zaposleni::truncate();
         Parking::truncate();
         ParkingTermin::truncate();
 
         $parking1=Parking::factory()->create();
         $parking2=Parking::factory()->create();
 
-       Korisnik::factory(2)->create([
+       Zaposleni::factory(2)->create([
             "parking_id"=>$parking1->id,
         ]);
 
-       Korisnik::factory()->create([
+       Zaposleni::factory()->create([
             "parking_id"=>$parking2->id,
         ]);
 

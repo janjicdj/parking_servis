@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\KorisnikCollection;
-use App\Http\Resources\KorisnikResource;
-use App\Models\Korisnik;
+use App\Http\Resources\ZaposleniCollection;
+use App\Http\Resources\ZaposleniResource;
+use App\Models\Zaposleni;
 use Illuminate\Http\Request;
 
-class KorisnikController extends Controller
+class ZaposleniController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class KorisnikController extends Controller
      */
     public function index()
     {
-        $korisnici = Korisnik::all();
-        return new KorisnikCollection($korisnici);
+        $zaposleni = Zaposleni::all();
+        return new ZaposleniCollection($zaposleni);
     }
 
     /**
@@ -44,21 +44,21 @@ class KorisnikController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Korisnik  $korisnik
+     * @param  \App\Models\Zaposleni  $zaposleni
      * @return \Illuminate\Http\Response
      */
-    public function show(Korisnik $korisnik)
+    public function show(Zaposleni $zaposleni)
     {
-        return new KorisnikResource($korisnik);
+        return new ZaposleniResource($zaposleni);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Korisnik  $korisnik
+     * @param  \App\Models\Zaposleni  $zaposleni
      * @return \Illuminate\Http\Response
      */
-    public function edit(Korisnik $korisnik)
+    public function edit(Zaposleni $zaposleni)
     {
         //
     }
@@ -67,10 +67,10 @@ class KorisnikController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Korisnik  $korisnik
+     * @param  \App\Models\Zaposleni  $zaposleni
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Korisnik $korisnik)
+    public function update(Request $request, Zaposleni $zaposleni)
     {
         //
     }
@@ -78,10 +78,10 @@ class KorisnikController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Korisnik  $korisnik
+     * @param  \App\Models\Zaposleni  $zaposleni
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Korisnik $korisnik)
+    public function destroy(Zaposleni $zaposleni)
     {
         //
     }
