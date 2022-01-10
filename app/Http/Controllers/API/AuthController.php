@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Zaposleni;
+use App\Rules\PostojiParking;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ class AuthController extends Controller
             'pol'=>'required|string|max:255',
             'username'=>'required|string|max:255|unique:zaposlenis',
             'password'=>'required|string|min:5',
-            'parking_id'=>'required|integer'
+            'parking_id'=>['required','integer',new PostojiParking()]
         ]);
 
         if($validator->fails()){
@@ -55,5 +56,12 @@ class AuthController extends Controller
         return response()->json(['message'=>'Uspesno ste se ulogovali'.$zaposleni->ime." ".$zaposleni->prezime,
                                   'access_token'=>$token,'token_type'=>'Bearer']);
 
+    }
+
+    public function logout(Request $request){
+        auth()->user()->tokens()->delete();
+        return [
+            'message' => 'Uspesno ste se odjavili.'
+        ];
     }
 }
